@@ -20,26 +20,26 @@
     <script>
     function getUserInput(promptText) {
       return new Promise(resolve => {
-        const output = document.getElementById("output");
-        output.textContent += promptText + " ";
+        const output = document.getElementById("output")
+        output.textContent += promptText + " "
         
-        const input = document.createElement("input");
-        input.style.cssText = "background:black;color:white;border:none;outline:none;font-family:inherit;font-size:inherit;";
-        output.appendChild(input);
-        input.focus();
+        const input = document.createElement("input")
+        input.style.cssText = "background:black;color:white;border:none;outline:none;font-family:inherit;font-size:inherit;"
+        output.appendChild(input)
+        input.focus()
         
         input.addEventListener("keydown", function(event) {
           if (event.key === "Enter") {
-            const userInput = input.value;
-            input.remove();
-            output.textContent += userInput + "\n";
+            const userInput = input.value
+            input.remove()
+            output.textContent += userInput + "\n"
             resolve(userInput);
           }
         });
       });
     }
       function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
+        return new Promise(resolve => setTimeout(resolve, ms))
       }
       
       function writer(text, speed = 25) {
@@ -86,6 +86,7 @@
         await writer("------------------------------")
         await writer("commands:")
         await writer("help - shows this list")
+        await writer("login [user] [password] - attempts log in to database-101 with the specified credentials")
       }
       async function run() {
 
