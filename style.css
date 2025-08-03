@@ -1,0 +1,8 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Consolas, "Courier New", Courier, monospace;
+    font-weight: 500;
+    font-size: medium;
+    white-space: pre;
+}
